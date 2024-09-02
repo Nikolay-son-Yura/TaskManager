@@ -1,2 +1,5 @@
-package ru.gb.task.model;public class Priority {
+package ru.gb.task.model;
+
+public enum Priority {
+    HIGH, MEDIUM, LOW
 }

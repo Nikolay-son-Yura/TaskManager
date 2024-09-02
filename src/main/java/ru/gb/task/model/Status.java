@@ -1,2 +1,5 @@
-package ru.gb.task.model;public enum Status {
+package ru.gb.task.model;
+
+public enum Status {
+    PENDING,   IN_PROGRESS,    COMPLETED
 }
