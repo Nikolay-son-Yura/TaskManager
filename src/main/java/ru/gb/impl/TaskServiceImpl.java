@@ -1,7 +1,6 @@
-package ru.gb.mail.impl;
+package ru.gb.impl;
 
 import org.springframework.stereotype.Service;
-import ru.gb.mail.dto.TaskDto;
 import ru.gb.task.model.Status;
 import ru.gb.task.model.Task;
 import ru.gb.task.repository.TaskRepository;
@@ -9,7 +8,6 @@ import ru.gb.task.service.TaskService;
 import ru.gb.user.model.User;
 
 import java.time.Instant;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 

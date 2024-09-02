@@ -16,3 +16,16 @@ logging:
     org:
       springframework:
         security: DEBUG
+
+
+  mail:
+    host: smtp.mail.ru
+    password: ${SERVER_MAIL_PASSWORD}
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    username: ${SERVER_MAIL}

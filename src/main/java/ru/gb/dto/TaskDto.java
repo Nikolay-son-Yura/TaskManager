@@ -1,4 +1,4 @@
-package ru.gb.mail.dto;
+package ru.gb.dto;
 
 import lombok.Getter;
 import lombok.Setter;

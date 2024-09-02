@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.gb.mail.dto.LoginDto;
+import ru.gb.dto.LoginDto;
 import ru.gb.user.model.Role;
 import ru.gb.user.model.User;
 import ru.gb.user.repository.RoleRepository;
 import ru.gb.user.repository.UserRepository;
-import ru.gb.mail.dto.SignUpDto;
+import ru.gb.dto.SignUpDto;
 
 import java.util.Collections;
 

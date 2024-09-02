@@ -1,10 +1,10 @@
-package ru.gb.mail.util;
+package ru.gb.util;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.gb.mail.dto.TaskDto;
-import ru.gb.mail.dto.UserDto;
+import ru.gb.dto.TaskDto;
+import ru.gb.dto.UserDto;
 import ru.gb.task.model.Task;
 import ru.gb.user.model.User;
 
