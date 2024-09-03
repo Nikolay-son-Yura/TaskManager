@@ -6,14 +6,17 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.gb.dto.TaskDto;
 import ru.gb.dto.UserDto;
 import ru.gb.impl.TaskServiceImpl;
+import ru.gb.user.service.CustomUserDetails;
 import ru.gb.user.service.UserService;
 import ru.gb.util.MapperUtil;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Tag(name = "Планировщик задач")
 @RestController
@@ -30,19 +33,16 @@ public class TaskController {
         this.mapperUtil = mapperUtil;
     }
     @Operation(summary = "Получение исполнителя")
-    public UserDto getExecutor(){
-
-        /**
-         * в процессе
-         */
-        return null;
+    @GetMapping("/user")
+    public UserDto getUser(CustomUserDetails customUserDetails){
+        return mapperUtil.convertToUserDTO(customUserDetails.getUser());
     }
     @Operation(summary = "Получение списка задач пользователя")
-    public List<TaskDto> getTasks(){
-        /**
-         * в процессе
-         */
-        return null;
+    @GetMapping("/tasks")
+    public List<TaskDto> getTasks(CustomUserDetails customUserDetails){
+        return taskService.findByUserId(customUserDetails.getUser().getId()).stream()
+                .map(mapperUtil::convertToTaskDTO)
+                .collect(Collectors.toList());
     }
 
     @Operation(summary = "Создание задачи")

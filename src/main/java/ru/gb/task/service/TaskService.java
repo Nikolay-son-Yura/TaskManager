@@ -11,9 +11,9 @@ public interface TaskService {
 
     Task createTask(Task task,User user);
 
-    Task getTaskById(Long id);
+    Task findById(Long id);
 
-    Task getTaskUserId(User user);
+    List<Task> findByUserId(Long id);
 
     Task updateTask(Task task,Long id);
 

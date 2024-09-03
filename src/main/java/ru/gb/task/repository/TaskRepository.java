@@ -1,9 +1,6 @@
 package ru.gb.task.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import ru.gb.task.model.Priority;
 import ru.gb.task.model.Status;
 import ru.gb.task.model.Task;
@@ -18,7 +15,7 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
 
     Task findByAuthorId(Long authorId);
 
-    Task findByAssigneeId(Long assigneeId);
+    List<Task> findByUserId(Long assigneeId);
 
     Task findByStatusAndPriority(Status status, Priority priority);
 
